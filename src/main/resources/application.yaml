@@ -1,3 +1,13 @@
 spring:
   application:
     name: demo-modulith
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:dev}
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:mydatabase}
+    username: ${DB_USER:myuser}
+    password: ${DB_PASSWORD:secret}
+  
+  sql:
+    init:
+      mode: always
