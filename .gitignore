@@ -34,3 +34,8 @@ build/
 
 ### AI Agents ###
 AGENTS.md
+
+### Environment files ###
+.env
+.env.*
+!.env.example
