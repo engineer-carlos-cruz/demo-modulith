@@ -38,4 +38,3 @@ AGENTS.md
 ### Environment files ###
 .env
 .env.*
-!.env.example
