@@ -1,0 +1,36 @@
+package com.ccruz.demo_modulith.publishing;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.ccruz.demo_modulith.notification.NotificationService;
+
+@Service
+public class PublishingService {
+
+    private final ContentRepository repository;
+    private final NotificationService notifications;
+
+    public PublishingService(ContentRepository contentRepository, NotificationService notificationService) {
+        this.repository = contentRepository;
+        this.notifications = notificationService;
+    }
+
+    @Transactional
+    public Content publish(String title, String url, ContentType type) {
+        var content = repository.save(Content.draft(title, url, type));
+        notifications.notifySubscribers(content);
+        return content;
+    }
+
+    public Optional<Content> findById(Long id) {
+        return repository.findById(id);
+    }
+
+    public List<Content> findAll() {
+        return repository.findAll();
+    }
+}
