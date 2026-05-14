@@ -7,6 +7,6 @@ public class ModularityTest {
 
     @Test
     void virifiesModularStructure() {
-        ApplicationModules.of(ApplicationModules.class).verify();
+        ApplicationModules.of(DemoModulithApplication.class).verify();
     }
 }
