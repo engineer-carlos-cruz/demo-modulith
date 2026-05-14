@@ -1,4 +1,4 @@
-package com.ccruz.demo_modulith.notification;
+package com.ccruz.demo_modulith.notification.internal;
 
 import org.springframework.stereotype.Service;
 
