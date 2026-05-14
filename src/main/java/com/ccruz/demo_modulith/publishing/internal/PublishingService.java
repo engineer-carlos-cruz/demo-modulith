@@ -1,4 +1,4 @@
-package com.ccruz.demo_modulith.publishing;
+package com.ccruz.demo_modulith.publishing.internal;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,7 +6,9 @@ import java.util.Optional;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.ccruz.demo_modulith.notification.NotificationService;
+import com.ccruz.demo_modulith.notification.internal.NotificationService;
+import com.ccruz.demo_modulith.publishing.Content;
+import com.ccruz.demo_modulith.publishing.ContentType;
 
 @Service
 public class PublishingService {
